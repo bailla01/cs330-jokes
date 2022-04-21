@@ -1,0 +1,60 @@
+
+   
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jokes</title>
+    <link href="//cdn.muicss.com/mui-0.10.1/css/mui.min.css" rel="stylesheet" type="text/css" />
+    <script src="//cdn.muicss.com/mui-0.10.1/js/mui.min.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div class="mui-container mui--text-center">
+        <h1>Prepare to be amused!</h1>
+    </div>
+    <div class="mui-container mui--text-center" id="specifications" name="specifications">
+        <form name="jokeType" action="/jokes" method="GET">
+            <div class="mui-container">
+                <div class="mui-row">
+                  <div class="mui-col-6">
+                    <label for="langSelect">Language</label>
+                    <select id="langSelect" name="language" ></select>
+                  </div>
+                  <div class="mui-col-6">
+                    <label for="catSelect">Category</label>
+                    <select id="catSelect" name="category"></select>
+                  </div>
+                </div>
+                <div class="mui-row">
+                  <div class="mui-col-6">
+                    <div class="mui-textfield">
+                        <label for="numInput">Number of Jokes</label>
+                        <input id="numInput" type="text" name="number" placeholder="10">
+                    </div>
+                  </div>
+                  <div class="mui-col-6">
+                    OR
+                  </div>
+                  <div class="mui-col-6">
+                    <div class="mui-textfield">
+                        <label for="idInput">Joke ID</label>
+                        <input id="idInput" type="text" name="id" placeholder="0">
+                      </div>
+                  </div>
+                </div>
+              </div>
+            <button class="mui-btn mui-btn-large mui-btn--primary" type="button" name="submit" value="submit" 
+            onclick = "getJokes()">Get jokes</button>
+        </form>
+
+    </div>
+    <div class="mui-container mui--text-center">
+        <div class="mui-panel mui--text-center" id="response"></div>
+    </div>
+</body>
+
+</html>
