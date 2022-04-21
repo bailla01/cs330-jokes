@@ -6,8 +6,10 @@ jokes api
 import json
 from flask import Flask, Response, jsonify, request, abort
 import pyjokes
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route("/api/v1/jokes", methods=['GET', 'POST'])
 def get_any():
