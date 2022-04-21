@@ -21,14 +21,12 @@ def get_any():
         if id < len(alljokes):
             joke = alljokes[id]
         else:
-            abort(404)
+            # TODO: make this an error
+            joke = alljokes[0]
     elif number:
         alljokes = pyjokes.get_jokes(language, category)
         number = int(number)
-        if number < len(alljokes):
-            joke = alljokes[:number]
-        else:
-            abort(404)
+        joke = alljokes[:number]
     else:
         try:
             joke = pyjokes.get_joke(language, category)
