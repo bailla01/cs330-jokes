@@ -25,16 +25,18 @@ def get_any():
         else:
             # TODO: make this an error
             joke = alljokes[0]
+        data = [joke]
     elif number:
         alljokes = pyjokes.get_jokes(language, category)
         number = int(number)
-        joke = alljokes[:number]
+        data = alljokes[:number]
     else:
         try:
             joke = pyjokes.get_joke(language, category)
+            data = [joke]
         except:
             abort(404)
-    return jsonify(joke=joke)
+    return jsonify(data=data)
 
 
 if __name__ == "__main__":
