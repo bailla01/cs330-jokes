@@ -21,11 +21,9 @@ def get_any():
         alljokes = pyjokes.get_jokes(language, category)
         id = int(id)
         if id < len(alljokes):
-            joke = alljokes[id]
+            data = [alljokes[id]]
         else:
-            # TODO: make this an error
-            joke = alljokes[0]
-        data = [joke]
+            data = '404'
     elif number:
         alljokes = pyjokes.get_jokes(language, category)
         number = int(number)
@@ -35,7 +33,8 @@ def get_any():
             joke = pyjokes.get_joke(language, category)
             data = [joke]
         except:
-            abort(404)
+            data = '404'
+
     return jsonify(data=data)
 
 
